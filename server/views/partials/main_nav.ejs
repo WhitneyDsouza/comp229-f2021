@@ -45,6 +45,21 @@
             <a class="nav-link" href="/contact"><i class="fas fa-phone-alt"></i> Contact</a>
             <% } %> 
           </li>
+          <li class="nav-item">
+            <% if (title == "Business Contacts List") { %> 
+              <a class="nav-link active" href="/user-list"><i class="fas fa-users"></i> Users</a>
+            <% } else { %> 
+              <a class="nav-link" href="/user-list"><i class="fas fa-users"></i> Users</a>
+            <% } %> 
+          </li>
+          <% if(typeof displayName == 'string' && displayName) { %>
+          <li class="navbar-text"><i class="fas fa-user"></i>Welcome, <%= displayName  %> </li>
+          <li class="nav-item"><a href="/logout" class="nav-link">
+            <i class="fas fa-sign-out-alt"></i>Logout</a></li>
+          <% }else { %>
+          <li class="nav-item"><a href="/login" class="nav-link">
+            <i class="fas fa-sign-in-alt"></i>Login</a></li>
+          <% }  %>   
       </div>
     </div>
   </nav>
