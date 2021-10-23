@@ -17,7 +17,7 @@ module.exports.displayUserList = (req, res, next) => {
                 displayName: req.user ? req.user.displayName : ''}
             )
         }
-    });
+    }).sort( { name: 1 } );
 }
 
 module.exports.displayAddPage = (req, res, next) => {
